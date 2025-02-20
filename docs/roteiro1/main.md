@@ -25,6 +25,24 @@ Conforme ilustrado acima, a tela inicial do MAAS apresenta um dashboard com info
 
 ### Tarefa 2
 
+Exemplo de diagrama
+
+```mermaid
+architecture-beta
+    group api(logos:aws-lambda)[API]
+
+    service db(logos:aws-aurora)[Database] in api
+    service disk1(logos:aws-glacier)[Storage] in api
+    service disk2(logos:aws-s3)[Storage] in api
+    service server(logos:aws-ec2)[Server] in api
+
+    db:L -- R:server
+    disk1:T -- B:server
+    disk2:T -- B:db
+```
+
+[Mermaid](https://mermaid.js.org/syntax/architecture.html){:target="_blank"}
+
 ## Questionário, Projeto ou Plano
 
 Esse seção deve ser preenchida apenas se houver demanda do roteiro.
