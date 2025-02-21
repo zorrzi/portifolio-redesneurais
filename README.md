@@ -17,7 +17,7 @@ source ./env/bin/activate
 Instale as dependências com:
 
 ``` shell
-pip3 install -r requirements.txt
+python3 -m pip install -r requirements.txt --upgrade
 ```
 
 ## Deployment
@@ -25,7 +25,7 @@ pip3 install -r requirements.txt
 O material utiliza o [mkdocs](https://www.mkdocs.org/) para gerar a documentação. Para visualizar a documentação, execute o comando:
 
 ``` shell
-mkdocs serve
+mkdocs serve -o
 ```
 
 Para subir ao GitHub Pages, execute o comando:

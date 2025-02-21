@@ -8,6 +8,14 @@ Os pontos "tarefas" são os passos que devem ser seguidos para a realização do
 
 ### Tarefa 1
 
+Instalando o MAAS:
+
+<!-- termynal -->
+
+``` bash
+sudo snap install maas --channel=3.5/Stable
+```
+
 ![Tela do Dashboard do MAAS](./maas.png)
 /// caption
 Dashboard do MAAS
