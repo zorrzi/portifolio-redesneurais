@@ -100,11 +100,18 @@ markdown_extensions:
   - pymdownx.blocks.caption
   - tables
 
-
 plugins:
   - glightbox
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-authors
+  - git-committers:
+      repository: hsandmann/hsandmann.github.com
+      branch: main
   - search
   - badges
+  - minify:
+      minify_html: true
   - markdown-exec
   - render_swagger:
       allow_arbitrary_locations : true
@@ -112,6 +119,7 @@ plugins:
       prompt_literal_start:
         - "$"
         - ">"
+
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
