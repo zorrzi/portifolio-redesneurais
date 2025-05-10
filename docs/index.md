@@ -8,8 +8,13 @@
 
 ## Grupo/Kit X
 
-João da Silva
-Pedro de Souza
+1. João da Silva
+1. Pedro de Souza
+1. Maria Oliveira
+1. Grupo K
+    - João da Silva
+    - Pedro de Souza
+
 
 
 !!! tip "Instruções"
@@ -60,7 +65,7 @@ flowchart TD
 === "De um arquivo remoto"
 
     ``` { .yaml .copy .select linenums='1' title="main.yaml" }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
+    - -8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
     ```
 
 === "Anotações no código"
