@@ -6,12 +6,15 @@
     2025.1
 
 
-## KIT-P
+## Grupo/Kit X
 
 João da Silva
-
 Pedro de Souza
 
+
+## Instruções
+
+Vocês devem utilizar este template como um bloco de notas para registrar o que foi feito e o que falta fazer. Vocês devem adicionar as informações necessárias.
 
 ## Entregas
 
