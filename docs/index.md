@@ -88,6 +88,13 @@ flowchart TD
     2. Aqui é feito um túnel da porta 5432 do container do banco de dados para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.
 
 
+## Exemplo de vídeo
+
+Lorem ipsum dolor sit amet
+
+<iframe width="100%" height="470" src="https://www.youtube.com/embed/3574AYQml8w" allowfullscreen></iframe>
+
+
 ## Referências
 
 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/){:target='_blank'}
