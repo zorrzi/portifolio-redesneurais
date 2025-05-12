@@ -65,7 +65,7 @@ flowchart TD
 === "De um arquivo remoto"
 
     ``` { .yaml .copy .select linenums='1' title="main.yaml" }
-    - -8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
+    --8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
     ```
 
 === "Anotações no código"
