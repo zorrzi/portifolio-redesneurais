@@ -139,8 +139,8 @@ nav:
           - Exercício 1: data/exercicio1/exercicio1.md
           - Exercício 2: data/exercicio2/exercicio2.md
           - Exercício 3: data/exercicio3/exercicio3.md
-      - Roteiro 2: roteiro2/main.md
-      - Roteiro 3: roteiro3/main.md
-      - Roteiro 4: roteiro4/main.md
+      - Perceptron: perceptron/main.md
+      - MLP: mlp/main.md
+      - Metricas: metricas/main.md
   - Projeto: projeto/main.md
 

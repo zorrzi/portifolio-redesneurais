@@ -1,5 +1,7 @@
 # **Exercício 3 — DATA**
 
+## Objetivo
+
 O objetivo é preparar o conjunto de dados **Spaceship Titanic (train.csv do Kaggle)** para uso em uma rede neural que utiliza a função de ativação **tanh**.  
 
 A seguir, realizei o passo a passo de carregamento, exploração, tratamento de nulos, codificação de variáveis categóricas e padronização de numéricas, além de visualizar o impacto do pré-processamento.
@@ -13,6 +15,7 @@ Cada linha representa um passageiro, com informações pessoais, dados de viagem
 A coluna **`Transported`** é o alvo (True/False), indicando se o passageiro foi transportado para outra dimensão.
 
 Principais tipos de variáveis:
+
 - **Identificação:** `PassengerId`, `Name` .
 - **Categóricas:** `HomePlanet`, `CryoSleep`, `Cabin`, `Destination`, `VIP`.
 - **Numéricas:** `Age`, `RoomService`, `FoodCourt`, `ShoppingMall`, `Spa`, `VRDeck`.
@@ -62,22 +65,32 @@ Algumas variáveis apresentam valores ausentes, enquanto outras estão completas
 ## Etapa 3 — Tratamento de valores ausentes
 
 Pelo `df.info()` e `df.isnull().sum()`:
+
 - Há nulos em quase todas as colunas de entrada (entre ~179 e ~217 linhas por coluna, ≈2%–3% do total de 8693).
 
 **Estratégia adotada:**
+
 1. **Categóricas** (`HomePlanet`, `CryoSleep`, `Cabin`, `Destination`, `VIP`):
+
    - Preencher com a **moda** (valor mais frequente).
+
    - Para `Cabin`, além de preencher, **separar em `Deck`/`Num`/`Side`** (formato `deck/num/side`), pois é uma string composta que carrega informação útil.
+
 2. **Numéricas** (`Age`, `RoomService`, `FoodCourt`, `ShoppingMall`, `Spa`, `VRDeck`):
+
    - Preencher com a **mediana** (robusta a outliers).
+
    - Regra de negócio adicional: se `CryoSleep == True`, os gastos deveriam ser **zero** (passageiro confinado à cabine). Assim, nulos nos gastos para quem está em `CryoSleep` serão imputados com **0**; os demais, com **mediana**.
 
 
 ## Etapa 3.1 — Preparos para imputação
 
 Antes de imputar:
+
 - Defino listas auxiliares de colunas.
+
 - Converto `CryoSleep` e `VIP` para booleanos/bits depois de preencher (eles vieram como `object` por causa dos NaNs).
+
 - Para `Cabin`, separo em três colunas (`Deck`, `Num`, `Side`), imputo `Deck`/`Side` com a **moda** e `Num` com a **mediana** (numérica).
 
 
@@ -114,7 +127,6 @@ def to_bool01(series):
 df["CryoSleep"] = to_bool01(df["CryoSleep"])
 df["VIP"]       = to_bool01(df["VIP"])
 
-# Alvo (já veio bool, mas garanto 0/1)
 df["Transported"] = df["Transported"].astype(int)
 ```
 
@@ -182,6 +194,7 @@ display(df.head())
 
 A função de ativação **tanh** é centrada em zero e gera saídas em [-1, 1].  
 Portanto, é essencial que as variáveis numéricas estejam **padronizadas** para:
+
 - média = 0  
 - desvio padrão = 1  
 
@@ -241,3 +254,28 @@ plt.show()
 /// caption 
 Comparação pré-pós processamento
 ///
+
+
+### Importância do Pré-processamento
+
+### Variável *Age*
+- **Antes:** a idade estava distribuída entre **0 e 80 anos**, com concentração principal entre 20 e 40.  
+- **Depois:** após a padronização, os valores passaram a variar aproximadamente entre **-2 e +3**, centralizados em torno de zero.  
+- **Impacto:** a transformação mantém a forma da distribuição, mas coloca a variável em uma escala adequada para a função de ativação `tanh`, que trabalha melhor com valores próximos de zero.
+
+### Variável *FoodCourt*
+- **Antes:** os gastos apresentavam valores de **0 até quase 30.000**, mas altamente concentrados em torno de zero.  
+- **Depois:** após normalização/padronização, os valores foram reduzidos para uma faixa próxima de **0 a 18**.  
+- **Impacto:** isso evita que essa variável, por estar em uma escala muito maior que as demais, dominasse o processo de treinamento da rede neural.
+
+### Comparação Geral
+- O pré-processamento **preservou o padrão das distribuições**, mas ajustou suas escalas para torná-las comparáveis.  
+- Agora, cada variável contribui de maneira **mais equilibrada** para o aprendizado, sem que uma tenha peso desproporcional apenas por conta da unidade de medida.  
+- Além disso, como os valores foram centralizados (no caso de *Age*) e reduzidos (no caso de *FoodCourt*), a rede neural terá **treinamento mais estável e eficiente**, evitando saturação da função de ativação `tanh`.
+
+### Conclusão
+O pré-processamento foi essencial para:
+
+- Reduzir diferenças de escala entre atributos,  
+- Adaptar os dados para o intervalo adequado da função de ativação,  
+- Garantir que todos os atributos tenham relevância equilibrada na classificação.

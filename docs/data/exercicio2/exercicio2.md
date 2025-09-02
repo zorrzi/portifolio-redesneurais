@@ -1,5 +1,7 @@
 # **Exercicio 2 - Data** #
 
+## Objetivo
+
 O objetivo deste exercício foi criar dois conjuntos de dados em **5 dimensões** (Classes A e B), cada um com 500 amostras, a partir de distribuições normais multivariadas. Em seguida, reduzir a dimensionalidade com **PCA** para 2D e analisar a separabilidade linear.  
 
 Minha hipótese inicial era de que, como as classes possuem **covariâncias diferentes**, a fronteira ótima não seria linear, representando um desafio para modelos simples como Perceptron ou Regressão Logística, e justificando o uso de modelos mais complexos (ex: redes neurais).
