@@ -5,13 +5,14 @@ Para utilizar o código deste repositório, siga as instruções a seguir:
 Crie um ambiente virtual do Python:
 
 ``` shell
-python3 -m venv env
+python3 -m venv .venv
 ```
 
 Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum script deste repositório**):
 
 ``` shell
-source ./env/bin/activate
+ .venv\Scripts\activate
+
 ```
 
 Instale as dependências com:
