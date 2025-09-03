@@ -1,8 +1,8 @@
-site_name: Template de Entrega
-site_author: Sandmann, H.
+site_name: Portifólio ANN
+site_author: Zorzi, E.
 site_url: https://github.com/zorrzi/portifolio-redesneurais
 repo_url: https://github.com/zorrzi/portifolio-redesneurais
-repo_name: github/documentation.template
+repo_name: github/zorrzi/portifolio-redesneurais
 
 theme:
   name: material
@@ -110,7 +110,7 @@ plugins:
       enable_creation_date: true
   - git-authors
   - git-committers:
-      repository: hsandmann/hsandmann.github.com
+      repository: zorrzi/portifolio-redesneurais
       branch: main
   - search
   - badges

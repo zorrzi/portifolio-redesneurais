@@ -1,100 +1,51 @@
-# Template de Entrega
+# Redes Neurais e Deep Learning — Insper
 
+Este portfólio reúne as atividades e projetos desenvolvidos na disciplina de **Redes Neurais e Deep Learning** do Insper.  
+O objetivo é documentar de forma clara e organizada cada etapa do aprendizado, desde os primeiros conceitos de separabilidade de dados até a implementação de modelos mais avançados, como redes neurais multicamadas e modelos generativos.
 
-???+ info inline end "Edição"
+Ao longo deste material, estão descritos:
 
-    2025.1
+- A motivação de cada exercício ou projeto,
+- O passo a passo de implementação,
+- As análises dos resultados obtidos,
+- E as conclusões em relação ao uso de redes neurais para diferentes problemas.
 
+---
 
-## Grupo/Kit X
+## Estrutura do Portfólio
 
-1. João da Silva
-1. Pedro de Souza
-1. Maria Oliveira
-1. Grupo K
-    - João da Silva
-    - Pedro de Souza
+### 📝 Exercícios
+Os exercícios práticos têm como foco a **exploração de conceitos fundamentais** de redes neurais.  
 
+1. **Data** — Geração e análise de dados sintéticos para explorar separabilidade de classes e limites de decisão.  
+2. **Perceptron** — Implementação e avaliação de um perceptron simples para problemas linearmente separáveis.  
+3. **MLP (Multi-Layer Perceptron)** — Construção e treinamento de uma rede neural multicamadas para lidar com problemas não lineares.  
+4. **Metrics** — Análise de métricas de avaliação, discutindo acurácia, precisão, recall e F1-score no contexto de classificação.
 
+---
 
-!!! tip "Instruções"
+### 🚀 Projetos
+Os projetos aplicam os conceitos estudados em **problemas mais complexos e realistas**.  
 
-    Vocês devem utilizar este template como um bloco de notas para registrar o que foi feito e o que falta fazer. Vocês devem adicionar as informações necessárias.
-    O template deve ser editado e atualizado a cada entrega, registrando assim a data de entrega e o que foi feito até o momento via Git.
+1. **Classification** — Modelos de classificação em diferentes conjuntos de dados, explorando arquiteturas de redes neurais.  
+2. **Regression** — Aplicação de redes neurais em tarefas de regressão, analisando desempenho e capacidade de generalização.  
+3. **Generative Models** — Estudo e implementação de modelos generativos (como autoencoders ou GANs), avaliando seu potencial em criar ou reconstruir dados.
 
-## Entregas
+---
 
-- [x] Roteiro 1 - Data 23/02/2025
-- [ ] Roteiro 2
-- [ ] Roteiro 3
-- [ ] Roteiro 4
-- [ ] Projeto
+## 📌 Status de Desenvolvimento
+- [x] Exercício 1 (Data) concluído e documentado.  
+- [] Exercício 2 (Perceptron) concluído e documentado.  
+- [] Exercício 3 (MLP) concluído e documentado.  
+- [] Exercício 4 (Metrics) concluído e documentado.  
+- [] Projeto 1 (Classification) em andamento.  
+- [] Projeto 2 (Regression) em andamento.  
+- [] Projeto 3 (Generative Models) planejado para próxima etapa.  
 
-## Diagramas
+---
 
-Use o [Mermaid](https://mermaid.js.org/intro/){:target='_blank'} para criar os diagramas de documentação.
+## 🎯 Conclusão
 
-[Mermaid Live Editor](https://mermaid.live/){:target='_blank'}
+Este portfólio funciona como um **diário de bordo da disciplina**, mostrando não apenas os códigos implementados, mas também as reflexões sobre os resultados e os aprendizados obtidos.  
+A ideia é que ele sirva como referência tanto para revisitar conceitos importantes quanto para inspirar futuros trabalhos na área de **Inteligência Artificial aplicada a Redes Neurais**.
 
-
-``` mermaid
-flowchart TD
-    Deployment:::orange -->|defines| ReplicaSet
-    ReplicaSet -->|manages| pod((Pod))
-    pod:::red -->|runs| Container
-    Deployment -->|scales| pod
-    Deployment -->|updates| pod
-
-    Service:::orange -->|exposes| pod
-
-    subgraph  
-        ConfigMap:::orange
-        Secret:::orange
-    end
-
-    ConfigMap --> Deployment
-    Secret --> Deployment
-    classDef red fill:#f55
-    classDef orange fill:#ffa500
-```
-
-
-
-## Códigos
-
-=== "De um arquivo remoto"
-
-    ``` { .yaml .copy .select linenums='1' title="main.yaml" }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
-    ```
-
-=== "Anotações no código"
-
-    ``` { .yaml title="compose.yaml" }
-    name: app
-
-        db:
-            image: postgres:17
-            environment:
-                POSTGRES_DB: ${POSTGRES_DB:-projeto} # (1)!
-                POSTGRES_USER: ${POSTGRES_USER:-projeto}
-                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-projeto}
-            ports:
-                - 5432:5432 #(2)!
-    ```
-
-    1.  Caso a variável de ambiente `POSTGRES_DB` não exista ou seja nula - não seja definida no arquivo `.env` - o valor padrão será `projeto`. Vide [documentação](https://docs.docker.com/reference/compose-file/interpolation/){target='_blank'}.
-
-    2. Aqui é feito um túnel da porta 5432 do container do banco de dados para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.
-
-
-## Exemplo de vídeo
-
-Lorem ipsum dolor sit amet
-
-<iframe width="100%" height="470" src="https://www.youtube.com/embed/3574AYQml8w" allowfullscreen></iframe>
-
-
-## Referências
-
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/){:target='_blank'}
