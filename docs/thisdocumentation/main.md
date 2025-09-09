@@ -67,7 +67,7 @@ Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum 
 
 === "Windows"
     ``` shell
-    .\env\Scripts\activate
+    .\.venv\Scripts\activate
     ```
 
 Instale as dependências com:
