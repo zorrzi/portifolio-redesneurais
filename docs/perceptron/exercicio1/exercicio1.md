@@ -360,7 +360,6 @@ total_updates = sum([h["updates"] for h in history])  # total de atualizações
 print("=== RESULTADOS FINAIS ===")
 print(f"Pesos finais: w = [{w_final[0]:.4f}, {w_final[1]:.4f}]")
 print(f"Viés final: b = {b_final:.4f}")
-print(f"Convergência alcançada na época: {final_epoch}")
 print(f"Acurácia final: {final_accuracy:.4f} ({final_accuracy*100:.2f}%)")
 print(f"Total de atualizações durante todo o treinamento: {total_updates}")
 
@@ -376,7 +375,6 @@ Convergência alcançada na época 16!
 === RESULTADOS FINAIS ===
 Pesos finais: w = [0.0205, 0.0451]
 Viés final: b = -0.2251
-Convergência alcançada na época: 16
 Acurácia final: 1.0000 (100.00%)
 Total de atualizações durante todo o treinamento: 4341
 Pontos mal classificados: 0 de 2000 (0.00%)
