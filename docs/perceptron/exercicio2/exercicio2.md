@@ -171,7 +171,7 @@ if abs(w_ex2[1]) > 1e-10:
     x2_line_ex2 = -(w_ex2[0] * x1_range_ex2 + b_ex2) / w_ex2[1]
     plt.plot(x1_range_ex2, x2_line_ex2, 'k-', linewidth=3, label="Fronteira")
 
-# Destacar erros
+# erros
 errors_ex2 = (y_ex2 != y_pred_ex2)
 if np.any(errors_ex2):
     plt.scatter(X_ex2[errors_ex2, 0], X_ex2[errors_ex2, 1], 
@@ -191,13 +191,13 @@ plt.show()
 
 ## Etapa 5 — Conclusões sobre os resultados
 
-A fronteira aprendida é **linear** (reta com inclinação negativa) e a acurácia final ficou em **≈ 0,725**. Os **erros (marcados em amarelo)** concentram-se na **região central** onde as duas distribuições se sobrepõem, exatamente onde um limite linear não consegue discriminar perfeitamente.
+A fronteira aprendida é **linear** e a acurácia final ficou em **≈ 0,725**. Os **erros (marcados em amarelo)** concentram-se na **região central** onde as duas distribuições se sobrepõem, exatamente onde um limite linear não consegue discriminar perfeitamente.
 
 **Por que chegamos a ~0,72 de acurácia?**
 - Os dados foram gerados por **duas gaussianas com médias próximas** \([3,3]\) e \([4,4]\) e **mesma covariância isotrópica** \(\Sigma = 1.5\,I\). Logo, o problema **não é linearmente separável**.
 - O Perceptron ter chegado a **0,725** é **coerente** e **próximo do ótimo** para um modelo linear.
 
 **E o MLP?**  
-Um **Multi-Layer Perceptron** (com ativações não lineares) pode aprender **fronteiras curvas** e superar modelos lineares **se** a separação ótima for não linear. Neste dataset específico (duas gaussianas com covariâncias iguais), o ótimo é **linear**; portanto, um MLP bem regularizado tende a **empatar** com um linear em média (no teste). Ele só superaria de forma consistente **se** a estrutura real dos dados exigir **não linearidade**.
+Um **Multi-Layer Perceptron** (com ativações não lineares) pode aprender **fronteiras curvas** e superar modelos lineares **se** a separação ótima for não linear. Neste dataset específico (duas gaussianas com covariâncias iguais), o ótimo é **linear**; portanto, um MLP bem regularizado tende a **empatar** com um linear em média. Ele só superaria de forma consistente **se** a estrutura real dos dados exigir **não linearidade**.
 
-> Em suma: era **previsto** que uma reta não separasse perfeitamente essas duas classes. Para ganhos reais, use **lineares bem calibrados** ou **modelos não lineares** quando houver evidência de fronteira não linear.
+> Resumindo: era **previsto** que uma reta não separasse perfeitamente essas duas classes. Para ganhos reais, use **lineares bem calibrados** ou **modelos não lineares** quando houver evidência de fronteira não linear.

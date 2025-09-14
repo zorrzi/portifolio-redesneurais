@@ -46,7 +46,6 @@ Esses parâmetros serão usados na função `rng.multivariate_normal` para **ger
 
 rng = np.random.default_rng(42)
 
-# Parâmetros
 n = 1000
 
 mu0 = np.array([1.5, 1.5], dtype=float)
@@ -55,14 +54,12 @@ mu1 = np.array([5.0, 5.0], dtype=float)
 cov0 = np.array([[0.5, 0.0],[0.0, 0.5]], dtype=float)
 cov1 = np.array([[0.5, 0.0],[0.0, 0.5]], dtype=float)
 
-# Geração das amostras
 X0 = rng.multivariate_normal(mean=mu0, cov=cov0, size=n)
 X1 = rng.multivariate_normal(mean=mu1, cov=cov1, size=n)
 
 y0 = -np.ones(n, dtype=int)
 y1 =  np.ones(n, dtype=int)
 
-# Empilha e embaralha
 X = np.vstack([X0, X1])
 y = np.hstack([y0, y1])
 
@@ -81,7 +78,6 @@ Aqui eu **plotei a distribuição dos pontos por classe** para inspecionar rapid
 > **Objetivo:** verificar **forma**, **espalhamento** e possível **sobreposição** entre as classes, validando a **separabilidade linear** esperada para o perceptron.
 
 ```python
-# Scatter das duas classes
 mask_pos = y == 1
 mask_neg = y == -1
 
@@ -268,16 +264,15 @@ $$
         n, d = X.shape
         
         np.random.seed(42)
-        w = np.random.uniform(-2, 2, d)      # pesos aleatórios 
-        b = np.random.uniform(-5, 5)         # bias aleatório
+        w = np.random.uniform(-2, 2, d)      
+        b = np.random.uniform(-5, 5)        
         
         history = []
         
-        # LOOP PRINCIPAL: percorrer épocas
+        # percorrer épocas
         for epoch in range(1, max_epochs + 1):
             updates = 0
             
-            # Embaralhar dados para evitar ciclos e melhorar convergência
             if shuffle:
                 idx = np.random.permutation(n)
                 X_epoch, y_epoch = X[idx], y[idx]
@@ -286,7 +281,7 @@ $$
                 
             # PERCORRER CADA AMOSTRA NA ÉPOCA
             for xi, yi in zip(X_epoch, y_epoch):
-                # Calcular potencial de ativação: a = w·x + b
+                # potencial de ativação: a = w·x + b
                 z = np.dot(w, xi) + b
                 
                 # CRITÉRIO DE ERRO: yi * z <= 0
@@ -298,9 +293,9 @@ $$
                     b += eta * yi       # b ← b + η·yi
                     updates += 1
                     
-            # AVALIAR PERFORMANCE DA ÉPOCA
+            # performance da epoca
             y_hat = predict(X, w, b)
-            acc = (y_hat == y).mean()  # acurácia = % acertos
+            acc = (y_hat == y).mean()  # acuracia
             
             history.append({
                 "epoch": epoch,
@@ -310,9 +305,9 @@ $$
                 "b": b
             })
             
-            # CRITÉRIO DE PARADA: convergência
+            # convergência
             if updates == 0:
-                print(f"Convergência alcançada na época {epoch}!")
+                print(f"Convergência alcançada na época {epoch}")
                 break
                 
         return w, b, history, y_hat
@@ -336,7 +331,7 @@ def accuracy(y_true, y_pred):
 
 > - Taxa de aprendizado **η = 0.01**
 > - Máximo de **100 épocas**
-> - Parada antecipada por **convergência** (nenhuma atualização em uma época completa)
+> - Parada antecipada por **convergência**
 > - Rastreamento da **acurácia** após cada época
 
 ---
@@ -346,16 +341,16 @@ def accuracy(y_true, y_pred):
 ```python
 w_final, b_final, history, y_pred_final = train_perceptron(
     X, y, 
-    eta=0.001,       # taxa pequena para ver evolução gradual
-    max_epochs=100,  # máximo de épocas
-    shuffle=True     # embaralhar para evitar ciclos
+    eta=0.001,       
+    max_epochs=100,  
+    shuffle=True     
 )
 
 
-# Metricas finais
-final_accuracy = accuracy(y, y_pred_final)  # % de acertos
-final_epoch = history[-1]["epoch"]          # época de convergência
-total_updates = sum([h["updates"] for h in history])  # total de atualizações
+# metricas
+final_accuracy = accuracy(y, y_pred_final)  
+final_epoch = history[-1]["epoch"]         
+total_updates = sum([h["updates"] for h in history]) 
 
 print("=== RESULTADOS FINAIS ===")
 print(f"Pesos finais: w = [{w_final[0]:.4f}, {w_final[1]:.4f}]")
@@ -363,9 +358,9 @@ print(f"Viés final: b = {b_final:.4f}")
 print(f"Acurácia final: {final_accuracy:.4f} ({final_accuracy*100:.2f}%)")
 print(f"Total de atualizações durante todo o treinamento: {total_updates}")
 
-# Erros
-misclassified_mask = (y != y_pred_final)  # máscara dos erros
-n_misclassified = np.sum(misclassified_mask)  # contar erros
+# erros
+misclassified_mask = (y != y_pred_final)  
+n_misclassified = np.sum(misclassified_mask)
 print(f"Pontos mal classificados: {n_misclassified} de {len(y)} ({n_misclassified/len(y)*100:.2f}%)")
 ```
 
@@ -390,7 +385,7 @@ Pontos mal classificados: 0 de 2000 (0.00%)
 
 > 1. **Evolução da acurácia** durante o treinamento
 > 2. **Fronteira de decisão** aprendida pelo perceptron
-> 3. **Pontos mal classificados** (se houver)
+> 3. **Pontos mal classificados**
 
 ---
 
