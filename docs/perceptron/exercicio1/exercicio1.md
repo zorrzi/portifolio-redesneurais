@@ -76,7 +76,7 @@ y = y[idx]
 Aqui eu **plotei a distribuição dos pontos por classe** para inspecionar rapidamente o dataset antes do treino.
 
 - `mask_pos` e `mask_neg` separam os índices das amostras da **classe +1** e **classe −1**.
-- Desenhei **dois gráficos de dispersão** (um por classe), usando **marcadores diferentes** e leve transparência (`alpha=0.7`) para facilitar a leitura.
+- Desenhei **dois gráficos de dispersão** (um por classe), usando **marcadores diferentes**.
 
 > **Objetivo:** verificar **forma**, **espalhamento** e possível **sobreposição** entre as classes, validando a **separabilidade linear** esperada para o perceptron.
 
@@ -332,7 +332,7 @@ def accuracy(y_true, y_pred):
 
 ---
 
-> **Objetivo:** aplicar o perceptron implementado "do zero" nos dados gerados na **Etapa 1**:
+> **Objetivo:** aplicar o perceptron implementado nos dados gerados na **Etapa 1**:
 
 > - Taxa de aprendizado **η = 0.01**
 > - Máximo de **100 épocas**
