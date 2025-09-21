@@ -769,6 +769,32 @@ u^{(2)}_{\text{novo}} = 0.5501
 L_{\text{novo}} = 0.2494
 \]
 
+```python
+def forward_pass(x, W1, b1, W2, b2):
+    z1 = W1 @ x + b1
+    h1 = np.tanh(z1)
+    u2 = W2 @ h1 + b2
+    y_hat = np.tanh(u2)
+    return z1, h1, u2, y_hat
+
+z1_new, h1_new, u2_new, y_hat_new = forward_pass(x, W1_new, b1_new, W2_new, b2_new)
+L_new = (y - y_hat_new)**2
+
+print(f"z^(1)_novo = {z1_new}")
+print(f"h^(1)_novo = {h1_new}")
+print(f"u^(2)_novo = {u2_new}")
+print(f"ŷ_novo = {y_hat_new}")
+print(f"L_novo = {L_new}")
+```
+
+```
+z^(1)_novo = [ 0.3357 -0.221 ]
+h^(1)_novo = [ 0.3236 -0.2175]
+u^(2)_novo = 0.5501335506731257
+ŷ_novo = 0.5006202979935049
+L_novo = 0.2493800867760958
+```
+
 ---
 
 
