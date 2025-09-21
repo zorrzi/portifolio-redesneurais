@@ -143,7 +143,10 @@ nav:
       - Perceptron:
           - Exercício 1: perceptron/exercicio1/exercicio1.md
           - Exercício 2: perceptron/exercicio2/exercicio2.md
-      - MLP: mlp/main.md
+      - MLP:
+          - Exercício 1: mlp/exercicio1/exercicio1.md
+          - Exercício 2: mlp/exercicio2/exercicio2.md
+          - Exercicio 3: mlp/exercicio3/exercicio3.md
       - Metricas: metricas/main.md
   - Projeto: projeto/main.md
 
