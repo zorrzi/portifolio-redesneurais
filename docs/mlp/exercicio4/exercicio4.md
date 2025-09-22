@@ -1,4 +1,4 @@
-# **Exercício 4: MLP Profundo com Múltiplas Camadas Escondidas**
+# **Exercício 4: MLP**
 
 ---
 
@@ -7,6 +7,7 @@
 Implementar uma **versão mais profunda do Multi-Layer Perceptron (MLP)** com pelo menos 2 camadas escondidas, reutilizando e expandindo o código do Exercício 3. Este exercício demonstra como redes neurais mais profundas podem capturar representações mais complexas e hierárquicas dos dados, comparando seu desempenho com arquiteturas mais simples.
 
 ### **Especificações Técnicas:**
+
 - **Dataset**: Mesmo do Exercício 3 (1500 amostras, 4 features, 3 classes)
 - **Arquitetura**: 4 → 32 → 16 → 3 neurônios (2 camadas escondidas)
 - **Funções de Ativação**: tanh (camadas ocultas) + softmax (saída)
@@ -22,11 +23,13 @@ Implementar uma **versão mais profunda do Multi-Layer Perceptron (MLP)** com pe
 Redes neurais profundas oferecem várias vantagens sobre arquiteturas rasas:
 
 **Capacidade de Representação Hierárquica:**
+
 - Primeira camada escondida (32 neurônios): captura características básicas
 - Segunda camada escondida (16 neurônios): combina características em padrões complexos
 - Camada de saída (3 neurônios): classificação final baseada em representações hierárquicas
 
 **Maior Expressividade:**
+
 - Mais parâmetros permitem modelar relações não-lineares mais complexas
 - Capacidade de aproximar funções mais sofisticadas
 - Melhor separação de classes com fronteiras de decisão mais elaboradas
