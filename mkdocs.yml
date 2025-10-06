@@ -149,5 +149,6 @@ nav:
           - Exercicio 3: mlp/exercicio3/exercicio3.md
           - Exercicio 4: mlp/exercicio4/exercicio4.md
       - Metricas: metricas/main.md
-  - Projeto: projeto/main.md
+  - Projetos:
+      - Classificação: projetos/classificacao/classificacao.md
 
