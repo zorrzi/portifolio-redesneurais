@@ -12,6 +12,7 @@ Implementar e avaliar um Variational Autoencoder (VAE) no dataset MNIST, compree
 ### Objetivos Específicos
 
 **Preparação de Dados**
+
 - Carregar e normalizar o dataset MNIST
 - Dividir em conjuntos de treino e validação
 - Criar DataLoaders para processamento eficiente em batches
