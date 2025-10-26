@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/data/exercicio1/exercicio1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/data/exercicio2/exercicio2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/data/exercicio3/exercicio3/</loc>
-         <lastmod>2025-10-06</lastmod>
-    </url>
-    <url>
-         <loc>https://github.com/zorrzi/portifolio-redesneurais/metricas/main/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/mlp/main/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/mlp/exercicio1/exercicio1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/mlp/exercicio2/exercicio2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/mlp/exercicio3/exercicio3/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/mlp/exercicio4/exercicio4/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/perceptron/main/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/perceptron/exercicio1/exercicio1/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/perceptron/exercicio2/exercicio2/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/projetos/classificacao/classificacao/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/zorrzi/portifolio-redesneurais/thisdocumentation/main/</loc>
-         <lastmod>2025-10-06</lastmod>
+         <lastmod>2025-10-26</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/zorrzi/portifolio-redesneurais/vae/main/</loc>
+         <lastmod>2025-10-26</lastmod>
     </url>
 </urlset>
